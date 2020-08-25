@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<meta charset="UTF-8">
+<meta name="Author" content="零零后（北京）科技有限公司">
+<meta name="Keywords" content="黑人邀请您微信通... 黑人抬棺 专业团队">
+<meta name="Description" content="黑人邀请您微信通... 黑人抬棺 专业团队">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+        <title>黑人邀请您微信通...</title>
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        background-color: black;
+    }
+
+    img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #container {
+        height: 100%;
+        background: url('static/jpg/0.jpg') no-repeat top center/auto 100%;
+        width: 100%;
+        position: relative;
+    }
+
+    #container img {
+        width: 365px;
+        height: 365px;
+        transform: scale(0.8);
+        position: absolute;
+        border-radius: 30px;
+        top: 365px;
+    }
+
+    #a1 {
+        position: absolute;
+        right: 308px;
+        animation: mymove1 3s 3s forwards;
+
+    }
+
+    #a2 {
+        position: absolute;
+        left: 304px;
+
+        animation: mymove 3s forwards;
+
+    }
+
+    @keyframes mymove {
+        from {
+            left: 304px;
+        }
+
+        to {
+            left: 0px;
+            animation-play-state: paused;
+        }
+    }
+
+    @keyframes mymove1 {
+        from {
+            right: 308px;
+        }
+
+        to {
+            right: 0px;
+            animation-play-state: paused;
+        }
+    }
+
+
+
+    @media screen and (max-width: 700px) {
+        #container {
+            height: 100%;
+            background: url('static/jpg/0.jpg') no-repeat top center/100% 100%;
+        }
+    }
+
+    #jntm {
+        display: none;
+    }
+
+    audio,
+    #jntm_music {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+    <div id="container">
+        <audio id="wx_music" src="static/mp3/call.mp3" controls loop autoplay></audio>
+        <img id="a1" src="./static/jpg/55.png" alt="">
+        <img id="a2" src=" ./static/jpg/44.png" alt="">
+
+    </div>
+    <div id="jntm"></div>
+    <div id="hr">
+    </div>
+    <audio id="mp32" controls loop src="static/mp3/astronomia.mp3">
+        您的浏览器不支持 audio 元素。
+    </audio>
+    <script>
+        var ele = document.getElementById("wx_music");
+        var mp32 = document.getElementById("mp32");
+        // var a1=document.getElementById("#a1");
+        // var a2=document.getElementById("#a2")
+        ele.addEventListener('canplay', function () {
+            setTimeout(function () {
+                ele.play();
+            }, 500);
+        })
+        document.getElementById("container").onclick = function () {
+            ele.pause();
+            this.removeChild(ele);
+            this.style.display = "none";
+            var jntm = document.getElementById("jntm");
+            jntm.style.display = "block";
+            mp32.play();
+            hr.innerHTML = '<iframe id="jntm_music" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="static/mp3/astronomia.mp3"></iframe>';
+            if (document.body.clientWidth > document.body.clientHeight) {
+                jntm.innerHTML = '<img  src="static/gif/0.gif" width="100%" style="margin: 0" >';
+            } else {
+                jntm.innerHTML = '<img  src="static/gif/0.gif" width="100%" style="margin:45% 0" >';
+            } setTimeout(function () {
+                if (document.body.clientWidth > document.body.clientHeight) {
+                    jntm.innerHTML = '<img id="img1" src="static/jpg/1.jpg"  width="100%" style="margin:0">';
+                } else {
+                    jntm.innerHTML = '<img id="img1" src="static/jpg/1.jpg"  width="100%" style="margin:45% 0">';
+                }
+            }, 4000);
+            setTimeout(function () {
+                var img1 = document.getElementById("img1");
+                jntm.removeChild(img1);
+                if (document.body.clientWidth > document.body.clientHeight) {
+                    jntm.innerHTML = '<img  src="static/gif/1.gif" width="100%" style="margin: 0" >';
+                } else {
+                    jntm.innerHTML = '<img  src="static/gif/1.gif" width="100%" style="margin:45% 0" >';
+                }
+            }, 7500);
+        };
+    </script>
+</body>
+
+</html>
